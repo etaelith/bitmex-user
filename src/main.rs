@@ -11,8 +11,8 @@ use std::{
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Define tu clave API y clave secreta
-    let api_key = env::var("API_KEY")?;
-    let api_secret = env::var("API_SECRET")?;
+    let api_key = env::var("API_KEY").expect("API_KEY NOT FOUND");
+    let api_secret = env::var("API_SECRET").expect("API_SECRET NOT FOUND");
 
     // Define la URL de la API y el camino
     let url = "https://www.bitmex.com/api/v1/user";
